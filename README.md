@@ -4,9 +4,9 @@
 Converts any amount of euros from numbers into letters, using Python.
 
 **Languages available :**
-- french (fr)
-- italian (it)
-- english UK (en)
+- [x] french (fr)
+- [x] italian (it)
+- [x] english UK (en)
 
 **Installation :**
 ```python
