@@ -6,6 +6,7 @@ Converts any amount of euros from numbers into letters, using Python.
 **Languages available :**
 - french (fr)
 - italian (it)
+- english (en)
 
 **Installation :**
 ```python
@@ -15,17 +16,14 @@ pip install euros
 **Examples:**
 
 ```python
->>> from euros import fr,it
-
->>> fr.conv(10)
-"dix euros"
+>>> from euros import fr,it,en
 
 >>> fr.conv(120.99)
 "cent vint euros et quatre-vingt-dix-neuf centimes"
 
->>> fr.conv(1000000.01)
-"un million d'euros et un centime"
-
 >>> it.conv(23.81)
 "ventitré euro e ottantuno centesimi"
+
+>>> en.conv(1200.55)
+"one thousand two hundred euros and fifty-five cents"
 ```
