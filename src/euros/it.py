@@ -1,7 +1,7 @@
 from re import sub
 
-chiffres = ['','un','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze','treize','quatorze','quinze','seize','dix-sept','dix-huit','dix-neuf']
-nombres = ['','dix','vingt','trente','quarante','cinquante','soixante','soixante','quatre-vingt','quatre-vingt']
+chiffres = ['','uno','due','tre','quatro','cinque','sei','sette','otto','nove','dieci','undici','dodici','tredici','quattordici','quindici','sedici','diciassette','diciotto','dicianove8']
+nombres = ['','dieci','venti','trenta','quaranta','cinquanta','sessanta','settanta','ottenta','novanta']
 
 def formater(x):
     """
@@ -33,29 +33,26 @@ def unite(x):
 
     if int(x[-2:])<20:
         dizaines = chiffres[int(x[-2:])]
-    elif int(x[-2:]) in [21,31,41,51,61]:
-        dizaines = nombres[int(x[-2])]+' et un'
-    elif int(x[-2:]) == 71:
-        dizaines = 'soixante et onze'
-
-    elif int(x[-2]) in [7,9]:
-        dizaines = nombres[int(x[-2])]+'-'+chiffres[int(x[-1])+10]
+    elif int(x[-2:]) == 23:
+        dizaines = 'ventitré'
+    elif int(x[-2:]) in [21,31,41,51,61,71,81,91]:
+        dizaines = nombres[int(x[-2])][:-1]+'uno'
+    elif int(x[-2:]) in [28,38,48,58,68,78,88,98]:
+        dizaines = nombres[int(x[-2])][:-1]+'otto'
     elif int(x[-1])==0:
         dizaines = nombres[int(x[-2])]
     else:
-        dizaines = nombres[int(x[-2])]+'-'+chiffres[int(x[-1])]
+        dizaines = nombres[int(x[-2])]+chiffres[int(x[-1])]
 
     if x[0] == '0':
         return dizaines
     else:
         if x[0] == '1':
-            centaines = 'cent'
+            centaines = 'cento'
         elif x[0] =='0':
             centaines = ''
         else:
-            centaines = chiffres[int(x[0])]+' cent'
-        if dizaines!='':
-            centaines+=' '
+            centaines = chiffres[int(x[0])]+'cento'
         return centaines+dizaines
 
 def nombre2lettres(x):
@@ -67,45 +64,41 @@ def nombre2lettres(x):
         total = unite(x)
     else:
         milliards, millions, milliers = '','',''
-        sp,sp2,sp3='','',''
-        if unite(x[-3:]) != '':#nécessité d'un espace avant les centaines
-            sp= ' '
-        if unite(x[-6:-3]) != '' and len(x)>6:#nécessité d'un espace avant les milliers
+        sp2,sp3='',''
+        if unite(x[-6:-3]) != '' and len(x)>6:
             sp2 = ' '
-        if unite(x[-9:-6]) != '' and len(x)>9:#nécessité d'un espace avant les millions
+        if unite(x[-9:-6]) != '' and len(x)>9:
             sp3 = ' '
 
 	#MILLIERS
-        if unite(x[-6:-3]) == 'un':
-            milliers = 'mille'+sp+unite(x[-3:])
+        if unite(x[-6:-3]) == 'uno':
+            milliers = 'mille'+unite(x[-3:])
         elif x[-6:-3] == '000':
             milliers = ''
         else:
-            milliers = unite(x[-6:-3])+' mille'+sp+unite(x[-3:])
+            milliers = unite(x[-6:-3])+'mila'+unite(x[-3:])
 
 	#MILLIONS
         if len(x)>6:
-            if unite(x[-9:-6]) == 'un':
-                millions = 'un million'
+            if unite(x[-9:-6]) == 'uno':
+                millions = 'un milione'
             elif x[-9:-6] == '000':
                 millions = ''
             else:
-                millions = unite(x[-9:-6])+' millions'
+                millions = unite(x[-9:-6])+' milioni'
 
 	#MILLIARDS
         if len(x)>9:
             if unite(x[-12:-9]) == 'un':
-                milliards = 'un milliard'
+                milliards = 'un miliardo'
             elif x[-12:-9] == '000' or len(x)>12:
-                milliards = 'plus de mille milliards'
+                milliards = 'più di mille miliardi'
             else:
-                milliards = unite(x[-12:-9])+' milliards'
+                milliards = unite(x[-12:-9])+' miliardi'
 
 	#TOTAL
         total=milliards+sp3+millions+sp2+milliers
 
-    if total[-4:] in ['cent','ingt'] and len(total)>5 and str(x)[-2:]!='20':
-        total += 's'
     return total
 
 def conv(x):
@@ -114,7 +107,7 @@ def conv(x):
     It takes only one argument (int, float or str) and converts it into letters.
 
     Example :
-    conv(10) returns 'dix euros'
+    conv(10) returns 'dieci euros'
     """
     x=formater(x)
     e,c = x.split('.')[0],x.split('.')[1]
@@ -123,25 +116,25 @@ def conv(x):
     if int(c)==0:
         c=''
     elif int(c)==1:
-        c='un centime'
+        c='un centesimo'
     else:
-        c=nombre2lettres(c)+' centimes'
+        c=nombre2lettres(c)+' centesimi'
     if int(e)==0:
         if c=='':
-            return 'zéro euro'
+            return 'zero euro'
         else:
             return c
     elif int(e)==1:
         e='un euro'
     elif len(e)>6 and (e[-6:]=='000000' or e[-12:-9] == '000' or len(e)>12):
-        e=nombre2lettres(e)+" d'euros"
+        e=nombre2lettres(e)+" di euro"
     else:
-        e=nombre2lettres(e)+' euros'
+        e=nombre2lettres(e)+' euro'
     if c=='':
         return e
     else:
-        return e+' et '+c
+        return e+' e '+c
 
 if __name__ == '__main__':
-	result=conv(str(input('Saisissez la somme en chiffres  :')))
+	result=conv(str(input("Inserisci l'importo in cifre   :")))
 	print(result)

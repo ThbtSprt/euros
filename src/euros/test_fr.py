@@ -12,7 +12,8 @@ echantillon=[
   ('80','quatre-vingts euros'),
   ('84,99','quatre-vingt-quatre euros et quatre-vingt-dix-neuf centimes'),
   (1001e3,'un million mille euros'),
-  (1e9,"un milliard d'euros")
+  (1e9,"un milliard d'euros"),
+  (2200,'deux mille deux cents euros')
    ]
 
 def test_fr_conv():
