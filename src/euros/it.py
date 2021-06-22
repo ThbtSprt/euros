@@ -89,7 +89,7 @@ def nombre2lettres(x):
 
 	#MILLIARDS
         if len(x)>9:
-            if unite(x[-12:-9]) == 'un':
+            if unite(x[-12:-9]) == 'uno':
                 milliards = 'un miliardo'
             elif x[-12:-9] == '000' or len(x)>12:
                 milliards = 'più di mille miliardi'
