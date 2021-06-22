@@ -125,7 +125,7 @@ def conv(x):
         else:
             return c
     elif int(e)==1:
-        e='un euro'
+        e='uno euro'
     elif len(e)>6 and (e[-6:]=='000000' or e[-12:-9] == '000' or len(e)>12):
         e=nombre2lettres(e)+" di euro"
     else:
