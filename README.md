@@ -19,7 +19,7 @@ pip install euros
 >>> from euros import fr,it,en
 
 >>> fr.conv(120.99)
-"cent vint euros et quatre-vingt-dix-neuf centimes"
+"cent vingt euros et quatre-vingt-dix-neuf centimes"
 
 >>> it.conv(23.81)
 "ventitré euro e ottantuno centesimi"
