@@ -69,6 +69,8 @@ def nombre2lettres(x):
 	#MILLIERS
         if x[-6:-3] == '000':
             milliers = ''
+        elif x == '1000':
+            milliers = 'a thousand'
         else:
             milliers = unite(x[-6:-3])+' thousand'+sp+unite(x[-3:])
 
@@ -97,7 +99,7 @@ def conv(x):
     It takes only one argument (int, float or str) and converts it into letters.
 
     Example :
-    conv(10) returns 'dix euros'
+    conv(10) returns 'ten euros'
     """
     x=formater(x)
     e,c = x.split('.')[0],x.split('.')[1]
