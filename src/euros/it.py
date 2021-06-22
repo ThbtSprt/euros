@@ -48,9 +48,7 @@ def unite(x):
         return dizaines
     else:
         if x[0] == '1':
-            centaines = 'cento'
-        elif x[0] =='0':
-            centaines = ''
+            centaines = 'cento'        
         else:
             centaines = chiffres[int(x[0])]+'cento'
         return centaines+dizaines

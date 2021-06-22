@@ -41,12 +41,9 @@ def unite(x):
     if x[0] == '0':
         return dizaines
     else:
-        if x[0] == '0':
-            centaines = ''
-        else:
-            centaines = chiffres[int(x[0])]+' hundred'
+        centaines = chiffres[int(x[0])]+' hundred'
         if dizaines!='':
-            centaines+=' '
+            centaines+=' and '
         return centaines+dizaines
 
 def nombre2lettres(x):
@@ -60,11 +57,11 @@ def nombre2lettres(x):
         milliards, millions, milliers = '','',''
         sp,sp2,sp3='','',''
         if unite(x[-3:]) != '':#nécessité d'un espace avant les centaines
-            sp= ' '
+            sp= ', '
         if unite(x[-6:-3]) != '' and len(x)>6:#nécessité d'un espace avant les milliers
-            sp2 = ' '
+            sp2 = ', '
         if unite(x[-9:-6]) != '' and len(x)>9:#nécessité d'un espace avant les millions
-            sp3 = ' '
+            sp3 = ', '
 
 	#MILLIERS
         if x[-6:-3] == '000':

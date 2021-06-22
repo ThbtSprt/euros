@@ -50,8 +50,6 @@ def unite(x):
     else:
         if x[0] == '1':
             centaines = 'cent'
-        elif x[0] =='0':
-            centaines = ''
         else:
             centaines = chiffres[int(x[0])]+' cent'
         if dizaines!='':

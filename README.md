@@ -1,12 +1,12 @@
 # euros
-[![](https://img.shields.io/badge/pypi-v0.0.5-blue)](https://pypi.org/project/euros/)
+[![](https://img.shields.io/badge/pypi-v1.0-blue)](https://pypi.org/project/euros/)
 
 Converts any amount of euros from numbers into letters, using Python.
 
 **Languages available :**
 - french (fr)
 - italian (it)
-- english (en)
+- english UK (en)
 
 **Installation :**
 ```python
@@ -24,6 +24,6 @@ pip install euros
 >>> it.conv(23.81)
 "ventitré euro e ottantuno centesimi"
 
->>> en.conv(1200.55)
-"one thousand two hundred euros and fifty-five cents"
+>>> en.conv(1215.55)
+"one thousand, two hundred and fifteen euros and fifty-five cents"
 ```
