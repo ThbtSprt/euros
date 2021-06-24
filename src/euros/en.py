@@ -20,16 +20,13 @@ def formater(x):
 def unite(x):
     """
     Converts x into letters when int(x)<1000
-    One mandatory argument : integer (or str input representing an integer), under one thousand
+    One mandatory argument : any string input representing an integer < 1000
     """
-    if len(str(x))==3:
-        x = str(x)
-    elif len(str(x))==2:
-        x= '0'+str(x)
-    elif len(str(x)) ==1:
-        x = '00'+str(x)
-    else:
-        return ''
+    x = str(x)
+    if len(x)==2:
+        x= '0'+x
+    elif len(x) ==1:
+        x = '00'+x
 
     if int(x[-2:])<20:
         dizaines = chiffres[int(x[-2:])]
@@ -51,6 +48,7 @@ def nombre2lettres(x):
     This function converts an integer into letters.
     It is called twice by conv() : firstly, for the integer part of the input, and secondly for the decimals if there are some.
     """
+    x=str(x)
     if len(x)<=3:
         total = unite(x)
     else:
