@@ -26,6 +26,8 @@ def unite(x):
         x= '0'+x
     elif len(x) ==1:
         x = '00'+x
+    elif len(x) !=3:
+        return ''
 
     if int(x[-2:])<20:
         dizaines = chiffres[int(x[-2:])]
