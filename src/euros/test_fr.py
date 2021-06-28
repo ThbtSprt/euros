@@ -7,6 +7,7 @@ echantillon=[
   ('1000','mille euros'),
   (1e6,"un million d'euros"),
   ('1,000','mille euros'),
+  (2000,'deux mille euros'),
   (u'1\xa0000','mille euros'),
   ('200','deux cents euros'),
   ('80','quatre-vingts euros'),
