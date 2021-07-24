@@ -11,7 +11,7 @@ echantillon=[
   ('200','duecento euro'),
   ('80','ottenta euro'),
   ('81,23','ottentuno euro e ventitré centesimi'),
-  (1001e3,'un milione mille euro'),
+  (1001e3,'un milione e mille euro'),
   (2228,'duemiladuecentoventotto euro'),
   (1e9,"un miliardo di euro")
    ]
