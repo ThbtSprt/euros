@@ -32,8 +32,8 @@ def unite(x):
 
     if int(x[-2:])<20:
         dizaines = chiffres[int(x[-2:])]
-    elif int(x[-2:]) == 23:
-        dizaines = 'ventitré'
+    elif int(x[-1]) == 3:
+        dizaines = nombres[int(x[-2])]+'tré'
     elif int(x[-2:]) in [21,31,41,51,61,71,81,91]:
         dizaines = nombres[int(x[-2])][:-1]+'uno'
     elif int(x[-2:]) in [28,38,48,58,68,78,88,98]:
