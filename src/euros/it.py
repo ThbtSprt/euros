@@ -72,12 +72,14 @@ def nombre2lettres(x):
         if unite(x[-6:-3]) == 'uno':
             milliers = 'mille'+unite(x[-3:])
         elif x[-6:-3] == '000':
-            milliers = ''
+            milliers = ''+unite(x[-3:])
         else:
             milliers = unite(x[-6:-3])+'mila'+unite(x[-3:])
 
 	#MILLIONS
         if len(x)>6:
+            if unite(x[-6:-3])!='' or  unite(x[-3:])!='':
+                sp2=' e '
             if unite(x[-9:-6]) == 'uno':
                 millions = 'un milione'
             elif x[-9:-6] == '000':
@@ -87,6 +89,8 @@ def nombre2lettres(x):
 
 	#MILLIARDS
         if len(x)>9:
+            if unite(x[-9:-6])!='':
+                sp3=' e '
             if unite(x[-12:-9]) == 'uno':
                 milliards = 'un miliardo'
             elif x[-12:-9] == '000' or len(x)>12:

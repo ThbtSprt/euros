@@ -65,7 +65,7 @@ def nombre2lettres(x):
 
 	#MILLIERS
         if x[-6:-3] == '000':
-            milliers = ''
+            milliers = ''+sp+unite(x[-3:])
         elif x == '1000':
             milliers = 'a thousand'
         else:
