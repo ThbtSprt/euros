@@ -5,7 +5,7 @@ setup(name='euros',
       description='Converts any amount of euros from numbers into letters',
       author='Thibaut Spriet',
       author_email='thibaut@spriet.online',
-      url='https://pypi.org/project/euros/',
+      url='https://github.com/ThbtSprt/euros',
       package_dir = {'': 'src'},
       packages=['euros']
      )
