@@ -9,21 +9,21 @@ Converts any amount of euros from numbers into letters, using Python.
 - [x] english UK (en)
 
 **Installation :**
-```python
+```bash
 pip install euros
 ```
 
 **Examples:**
 
 ```python
->>> from euros import fr,it,en
+from euros import fr,it,en
 
->>> fr.conv(120.99)
-"cent vingt euros et quatre-vingt-dix-neuf centimes"
+fr.conv(120.99)
+#'cent vingt euros et quatre-vingt-dix-neuf centimes'
 
->>> it.conv(23.81)
-"ventitré euro e ottantuno centesimi"
+it.conv(23.81)
+#'ventitré euro e ottantuno centesimi'
 
->>> en.conv(1215.55)
-"one thousand, two hundred and fifteen euros and fifty-five cents"
+en.conv(1215.55)
+#'one thousand, two hundred and fifteen euros and fifty-five cents'
 ```
