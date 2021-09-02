@@ -22,6 +22,7 @@ def unite(x):
     Converts x into letters when int(x)<1000
     One mandatory argument : a string input representing an integer, under one thousand
     """
+    x = str(x)
     if len(x)==2:
         x= '0'+x
     elif len(x) ==1:
