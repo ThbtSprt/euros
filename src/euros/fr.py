@@ -15,6 +15,8 @@ def formater(x):
             x=x.replace(',','.')
         x=sub(r'\s*[a-zA-Z]*','',x)
     x=round(float(x),2)
+    if x<0:
+        return str(0.00)
     return str(x)
 
 def unite(x):

@@ -1,5 +1,7 @@
 # euros
-[![](https://img.shields.io/badge/pypi-v1.2-blue)](https://pypi.org/project/euros/)
+[![](https://img.shields.io/pypi/v/euros)](https://pypi.org/project/euros/)
+[![](https://img.shields.io/pypi/dm/euros)](https://pypi.org/project/euros/)
+[![](https://img.shields.io/librariesio/dependents/pypi/euros)](https://github.com/ThbtSprt/euros/network/dependents)
 
 Converts any amount of euros from numbers into letters, using Python.
 
